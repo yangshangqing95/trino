@@ -183,7 +183,7 @@ public class QueryExplainer
     }
 
     private SubPlan getDistributedPlan(Session session, Statement statement, List<Expression> parameters, WarningCollector warningCollector, PlanOptimizersStatsCollector planOptimizersStatsCollector)
-    {
+    {  // todo: check logic here, get the logic plan @sqyang
         Plan plan = getLogicalPlan(session, statement, parameters, warningCollector, planOptimizersStatsCollector);
         return planFragmenter.createSubPlans(session, plan, false, warningCollector);
     }
